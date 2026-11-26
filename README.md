@@ -7,53 +7,39 @@ Proyecto de la materia SOA. Arquitectura: **monolito modular**, con frontend y b
 
 ```
 SKINMED/
-├── apps/
-│   ├── web/          # Frontend: React + Vite + TypeScript (Diseño y Frontend)
-│   └── api/          # Backend: monolito modular, stack por definir (Backend)
-│       └── src/modules/   # un módulo por área: pacientes, expediente, fotos…
-├── db/               # PostgreSQL: scripts de creación y datos de prueba (Backend)
-├── docs/             # Contratos de API y documentación técnica (Pruebas y Apoyo)
-├── docker-compose.yml  # PostgreSQL local
-└── package.json      # npm workspaces
+├── front/   # Frontend: React + Vite + TypeScript  → equipo de Diseño y Frontend
+└── back/    # Backend: monolito modular + PostgreSQL → equipo de Backend
 ```
 
-| Carpeta | Equipo responsable |
-|---|---|
-| `apps/web` | Diseño y Frontend |
-| `apps/api`, `db` | Backend |
-| `docs` | Pruebas y Apoyo General |
-| Raíz (configuración, README) | Project Managers |
+Cada carpeta tiene su propio README con cómo correrla y qué lleva adentro.
 
-## Requisitos
+| Carpeta | Qué lleva | Responsable |
+|---|---|---|
+| `front/` | Pantallas, componentes, estilos de la guía de Figma, cliente de la API, manual de usuario | Diseño y Frontend |
+| `back/` | Módulos del backend, base de datos (`db/`), `docker-compose.yml`, contratos de API (`docs/api/`) | Backend |
 
-- Node.js 20 o superior (`node -v`)
-- Docker Desktop, o PostgreSQL 16 instalado localmente
-
-## Cómo correrlo
+## Inicio rápido
 
 ```bash
-# 1. Instalar dependencias (desde la raíz)
+# Base de datos (desde back/)
+cd back
+docker compose up -d
+
+# Frontend (desde front/), en http://localhost:5173
+cd ../front
+cp .env.example .env
 npm install
-
-# 2. Levantar la base de datos
-npm run db:up
-
-# 3. Variables de entorno
-cp apps/web/.env.example apps/web/.env
-cp apps/api/.env.example apps/api/.env
-
-# 4. Frontend en http://localhost:5173
-npm run dev:web
+npm run dev
 ```
 
-El backend se agrega a los workspaces de `package.json` cuando el equipo defina su stack (ver `apps/api/README.md`).
+Requisitos: Node.js 20 o superior y Docker Desktop (o PostgreSQL 16 instalado).
 
 ## Cómo trabajamos
 
 **Ramas**
 - `main`: lo que se entrega. Solo se actualiza desde `develop` con aprobación de los PM.
 - `develop`: integración del día a día.
-- Ramas de trabajo desde `develop`: `feature/<modulo>-<descripcion>`, por ejemplo `feature/fotos-galeria` o `feature/pacientes-alta`. Para correcciones: `fix/<modulo>-<descripcion>`.
+- Ramas de trabajo desde `develop`: `feature/<modulo>-<descripcion>`, por ejemplo `feature/fotos-galeria` o `feature/pacientes-alta`. Correcciones: `fix/<modulo>-<descripcion>`.
 
 **Commits** (en español, con prefijo)
 - `feat(fotos): pantalla de galería`
@@ -62,14 +48,8 @@ El backend se agrega a los workspaces de `package.json` cuando el equipo defina 
 
 **Pull requests**
 - Siempre hacia `develop`, nunca directo a `main`.
-- Deben revisarlos el líder del equipo y un PM (Definición de terminado en Notion).
-- Una pantalla o un módulo por PR, para que sea fácil de revisar.
+- Los revisan el líder del equipo y un PM (Definición de terminado en Notion).
+- Una pantalla o un módulo por PR.
 
 **Contratos de API**
-Los endpoints se acuerdan antes de programar (26 nov) y se documentan en `docs/api/`. Si un contrato cambia, se avisa al otro equipo antes de hacer el merge.
-
-## Enlaces
-
-- Notion del proyecto: tablero, pantallas, servicios y APIs
-- Figma: SKINMED – Guía de estilos
-- Documento del proyecto: requerimientos y reglas de negocio
+Los endpoints se acuerdan antes de programar (26 nov) y se documentan en `back/docs/api/`. Si un contrato cambia, se avisa al otro equipo antes de hacer el merge.
