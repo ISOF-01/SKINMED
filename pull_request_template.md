@@ -15,5 +15,5 @@
 
 - [ ] Cumple con lo que pide el entregable
 - [ ] Probado y funciona sin errores graves
-- [ ] Si cambia un endpoint, el contrato en `docs/api/` está actualizado
+- [ ] Si cambia un endpoint, el contrato en `back/docs/api/` está actualizado
 - [ ] Documentado (aunque sea brevemente)

@@ -1,6 +1,17 @@
-# apps/web · Frontend
+# front · Frontend
 
 React + Vite + TypeScript. Responsable: equipo de Diseño y Frontend.
+
+## Cómo correrlo
+
+```bash
+cp .env.example .env
+npm install
+npm run dev      # http://localhost:5173 (también accesible desde la tablet en la misma red)
+npm run build    # revisa tipos y genera la versión de producción
+```
+
+`VITE_API_URL` en `.env` apunta al backend (por defecto `http://localhost:3000/api`).
 
 ## Estructura
 
@@ -11,6 +22,8 @@ src/
 ├── features/       # una carpeta por módulo, con sus pantallas
 ├── lib/api.ts      # cliente para llamar al backend
 └── styles/         # tokens de la guía de estilos y estilos globales
+docs/
+└── manual-usuario/ # manual para el doctor (Pruebas y Apoyo General)
 ```
 
 ## Reglas

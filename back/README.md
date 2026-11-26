@@ -1,8 +1,29 @@
-# apps/api · Backend
+# back · Backend
 
 Responsable: equipo de Backend. **Stack por definir** (llenar en Notion a más tardar el 26 de noviembre).
 
-Cuando se defina, el código va en `src/` respetando la carpeta de cada módulo. Si es Node, agreguen `apps/api` a los `workspaces` del `package.json` de la raíz y un script `dev:api`.
+Cuando se defina, el código va en `src/` respetando la carpeta de cada módulo, y la configuración del proyecto (por ejemplo `package.json`) va aquí en `back/`.
+
+## Qué hay en esta carpeta
+
+```
+back/
+├── src/modules/        # un módulo por área (ver tabla abajo)
+├── db/init/            # scripts SQL que crean el esquema
+├── docs/api/           # contratos de los endpoints
+├── docker-compose.yml  # PostgreSQL 16 local
+└── .env.example        # variables de entorno
+```
+
+## Base de datos local
+
+```bash
+docker compose up -d      # levanta PostgreSQL en localhost:5432
+docker compose down       # la detiene
+docker compose down -v    # la borra para volver a correr los scripts de db/init
+```
+
+Conexión: `postgresql://skinmed:skinmed@localhost:5432/skinmed`
 
 ## Monolito modular: reglas
 

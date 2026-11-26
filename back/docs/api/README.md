@@ -7,4 +7,4 @@ Un archivo por módulo, por ejemplo `pacientes.md`. Cada endpoint lleva:
 - **Qué regresa:** respuesta de ejemplo y códigos de error
 - **Quién lo usa:** pantalla del frontend
 
-Los borradores de endpoints están en el README de cada módulo: `apps/api/src/modules/*/README.md`.
+Los borradores de endpoints están en el README de cada módulo: `back/src/modules/*/README.md`.
