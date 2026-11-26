@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16
+    container_name: skinmed-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: skinmed
+      POSTGRES_PASSWORD: skinmed
+      POSTGRES_DB: skinmed
+    ports:
+      - "5432:5432"
+    volumes:
+      - skinmed-data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+
+volumes:
+  skinmed-data:

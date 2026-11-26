@@ -1,0 +1,32 @@
+# Dependencias
+node_modules/
+
+# Builds
+dist/
+build/
+coverage/
+
+# Variables de entorno (nunca subir contraseñas)
+.env
+.env.*
+!.env.example
+
+# Fotos subidas en desarrollo
+uploads/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Python / .NET (por si el backend usa alguno)
+__pycache__/
+.venv/
+bin/
+obj/

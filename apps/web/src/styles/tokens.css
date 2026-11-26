@@ -1,0 +1,48 @@
+/* Copia de las variables de Figma (SKINMED – Guía de estilos, colección "SKINMED").
+   Si cambian en Figma, se actualizan aquí. */
+:root {
+  /* Gris Oxford */
+  --gris-900: #1f2529;
+  --gris-700: #3b444b;
+  --gris-500: #6b757c;
+  --gris-300: #b9c0c5;
+  --gris-100: #edeff1;
+  --gris-50: #f6f7f8;
+  /* Azul */
+  --azul-700: #1b4c7f;
+  --azul-600: #24609f;
+  --azul-300: #8fb5e0;
+  --azul-100: #d9e7f6;
+  --azul-50: #eef4fb;
+  /* Rosa */
+  --rosa-700: #a8406a;
+  --rosa-500: #d9668a;
+  --rosa-300: #eda3bb;
+  --rosa-100: #f8dce5;
+  --rosa-50: #fcf0f4;
+  --blanco: #ffffff;
+  /* Estados */
+  --exito: #23704f;
+  --exito-fondo: #e3f3eb;
+  --aviso: #8a5a0b;
+  --aviso-fondo: #fbf0db;
+  --error: #b03a33;
+  --error-fondo: #fbe6e4;
+  /* Espacios */
+  --espacio-4: 4px;
+  --espacio-8: 8px;
+  --espacio-12: 12px;
+  --espacio-16: 16px;
+  --espacio-24: 24px;
+  --espacio-32: 32px;
+  --espacio-48: 48px;
+  /* Radios */
+  --radio-sm: 8px;
+  --radio-md: 10px;
+  --radio-lg: 14px;
+  --radio-full: 999px;
+  /* Tipografía */
+  --fuente-titulo: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --fuente-texto: 'Inter', system-ui, sans-serif;
+  --fuente-dato: 'IBM Plex Mono', ui-monospace, monospace;
+}
